@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEMA Template Clone</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://www.hema.nl/on/demandware.static/Sites-HemaNL-Site/-/default/dw76e8a5d3/images/logo.svg"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top navbar - visible only on large screens -->
+    <nav class="navbar navbar-expand-lg navbar-light top-nav d-none d-lg-block">
+      <div class="container">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="#">fotoservice</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">tickets & deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">verzekeringen</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">inspiratie</a></li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">winkels</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">klantenpas</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">klantenservice</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main header -->
+    <header class="py-3">
+      <div class="container">
+        <div class="row align-items-center header">
+          <!-- Logo - always visible -->
+          <div class="col-6 col-sm-auto order-1">
+            <img
+              src="https://www.hema.nl/on/demandware.static/Sites-HemaNL-Site/-/default/dw76e8a5d3/images/logo.svg"
+              alt="HEMA Logo"
+              class="logo"
+            />
+          </div>
+
+          <!-- Menu icon & text - visible on large screens, last on medium screens -->
+          <div class="col-auto order-lg-2 order-sm-last d-none d-sm-block p-1">
+            <button class="btn btn-link" aria-label="Categorieën">
+              <i class="fas fa-bars me-2"></i>
+              <span class="d-none d-lg-inline">categorieën</span>
+              <span class="d-none d-lg-inline p-1"
+                ><i class="fa-solid fa-chevron-down"></i
+              ></span>
+            </button>
+          </div>
+
+          <!-- Search bar - full width on small screens, inline on medium and up -->
+          <div class="col-12 col-sm order-last order-sm-3 mt-3 mt-sm-0 search">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control search-input"
+                placeholder="waar ben je naar op zoek?"
+              />
+              <span class="input-group-text">
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- User icon & text - visible on medium and large screens, on small screens it's part of the right group -->
+          <div class="col-auto order-2 order-sm-4 p-1">
+            <button class="btn btn-link" aria-label="Inloggen">
+              <i class="fa-regular fa-user me-2"></i>
+              <span class="d-none d-lg-inline">inloggen</span>
+            </button>
+          </div>
+
+          <!-- Heart icon - visible on medium and large screens, to the left of cart icon -->
+          <div class="col-auto order-3 order-sm-5 d-none d-sm-block p-1">
+            <button class="btn btn-link" aria-label="Favorieten">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+
+          <!-- Cart icon - always visible -->
+          <div class="col-auto order-5 order-sm-6 p-1">
+            <button class="btn btn-link">
+              <i class="fas fa-shopping-cart"></i>
+            </button>
+          </div>
+
+          <!-- Menu icon - visible only on small screens, right-most icon -->
+          <div class="col-auto order-4 d-sm-none p-1">
+            <button class="btn btn-link">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container py-3">
+      <div class="category-slider">
+        <button class="slider-control-prev" type="button" id="sliderPrevBtn">
+          <span class="slider-control-prev-icon" aria-hidden="true"
+            ><i class="fa-solid fa-arrow-left"></i
+          ></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <div class="row flex-nowrap overflow-hidden" id="categorySlider">
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/halloween.png"
+                  alt="Halloween"
+                  class="category-image"
+                />
+              </div>
+
+              <p class="category-name">halloween</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img src="/Assets/baby.png" alt="Baby" class="category-image" />
+              </div>
+
+              <p class="category-name">baby</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img src="/Assets/kind.png" alt="Kind" class="category-image" />
+              </div>
+              <p class="category-name">kind</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/dames.png"
+                  alt="Dames"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">dames</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/heren.png"
+                  alt="Heren"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">heren</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/wonen.png"
+                  alt="Wonen en slapen"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">wonen en slapen</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/taart.png"
+                  alt="Taart, eten en drinken"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">taart, eten en drinken</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/vriize.png"
+                  alt="Vrije tijd en kantoor"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">vrije tijd en kantoor</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/koken.png"
+                  alt="Beauty"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">koken en tafelen</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/feest.png"
+                  alt="Elektronica"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">feest en cadeau</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/mooi.png"
+                  alt="Koken en tafelen"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">mooi en gezond</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/speel.png"
+                  alt="Badkamer"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">speelgoed</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img src="/Assets/foto.png" alt="Tuin" class="category-image" />
+              </div>
+              <p class="category-name">fotoservice</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/vriend.png"
+                  alt="Huishouden"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">vriendenprijsjes</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/anbie.png"
+                  alt="Klussen"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">aanbiedingen en sale</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-1-5">
+            <div class="category-item">
+              <div class="image-box">
+                <img
+                  src="/Assets/nieu.png"
+                  alt="School"
+                  class="category-image"
+                />
+              </div>
+              <p class="category-name">nieuw</p>
+            </div>
+          </div>
+        </div>
+        <button class="slider-control-next" type="button" id="sliderNextBtn">
+          <span class="slider-control-next-icon" aria-hidden="true"
+            ><i class="fa-solid fa-arrow-right"></i
+          ></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- hero -->
+
+    <div class="hero">
+      <div class="hero-container">
+        <div class="hero-text text-white">
+          <h1>20% korting op bijna alles!</h1>
+          <p>
+            Alleen vandaag tot 23:59 20% korting op bijna alle artikelen in het
+            assortiment.
+          </p>
+        </div>
+        <div class="hero-button">
+          <button class="btn">shop</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/Assets/hero.png" alt="Your Image" class="custom-image" />
+      </div>
+    </div>
+
+    <!-- feature -->
+    <div class="container py-3">
+      <div class="feature-slider">
+        <button
+          class="slider-controll-prev"
+          type="button"
+          id="featureSliderPrevBtn"
+        >
+          <span class="slider-controll-prev-icon" aria-hidden="true">
+            <i class="fa-solid fa-arrow-left"></i>
+          </span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <div class="row flex-nowrap overflow-hidden" id="featureCategorySlider">
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="feature-item">
+              <div class="feature-box">
+                <div class="discount-badge"><span>20%</span><br />korting</div>
+                <img
+                  src="/Assets/happy-1.png"
+                  alt="Product Image"
+                  class="feature-image"
+                />
+              </div>
+              <p class="feature-name">dames</p>
+              <p class="feature-validity">geldig t/m 13 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="feature-item">
+              <div class="feature-box">
+                <div class="discount-badge"><span>20%</span><br />korting</div>
+                <img
+                  src="/Assets/happy-2.png"
+                  alt="Product Image"
+                  class="feature-image"
+                />
+              </div>
+              <p class="feature-name">wonen & slapen</p>
+              <p class="feature-validity">geldig t/m 13 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="feature-item">
+              <div class="feature-box">
+                <div class="discount-badge"><span>20%</span><br />korting</div>
+                <img
+                  src="/Assets/happy-3.png"
+                  alt="Product Image"
+                  class="feature-image"
+                />
+              </div>
+              <p class="feature-name">heren</p>
+              <p class="feature-validity">geldig t/m 13 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="feature-item">
+              <div class="feature-box">
+                <div class="discount-badge"><span>20%</span><br />korting</div>
+                <img
+                  src="/Assets/happy-4.png"
+                  alt="Product Image"
+                  class="feature-image"
+                />
+              </div>
+              <p class="feature-name">meisjes</p>
+              <p class="feature-validity">geldig t/m 13 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="feature-item">
+              <div class="feature-box">
+                <div class="discount-badge"><span>20%</span><br />korting</div>
+                <img
+                  src="/Assets/happy-5.png"
+                  alt="Product Image"
+                  class="feature-image"
+                />
+              </div>
+              <p class="feature-name">jongens</p>
+              <p class="feature-validity">geldig t/m 13 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="feature-item">
+              <div class="feature-box">
+                <div class="discount-badge"><span>20%</span><br />korting</div>
+                <img
+                  src="/Assets/happy-6.png"
+                  alt="Product Image"
+                  class="feature-image"
+                />
+              </div>
+              <p class="feature-name">baby</p>
+              <p class="feature-validity">geldig t/m 13 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="feature-item">
+              <div class="feature-box">
+                <div class="discount-badge"><span>20%</span><br />korting</div>
+                <img
+                  src="/Assets/happy-7.png"
+                  alt="Product Image"
+                  class="feature-image"
+                />
+              </div>
+              <p class="feature-name">koken & tafelen</p>
+              <p class="feature-validity">geldig t/m 13 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="feature-item">
+              <div class="feature-box">
+                <div class="discount-badge"><span>20%</span><br />korting</div>
+                <img
+                  src="/Assets/happy-8.png"
+                  alt="Product Image"
+                  class="feature-image"
+                />
+              </div>
+              <p class="feature-name">verkleedkleding</p>
+              <p class="feature-validity">geldig t/m 13 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="feature-item-last">
+              <span class="slider-controll-next-icon" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+              <p>meer aanbiedingen</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="slider-controll-next"
+          type="button"
+          id="featureSliderNextBtn"
+        >
+          <span class="slider-controll-next-icon" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- hero -->
+
+    <div class="banner">
+      <div class="banner-container">
+        <div class="banner-text text-white">
+          <h1>alles om van je huis een vrolijk thuis te maken</h1>
+          <p>van kleurrijke kaarsen tot beddengoed om in weg te dromen</p>
+        </div>
+        <div class="banner-button">
+          <button class="btn">ontdek wonen & slapen</button>
+        </div>
+      </div>
+      <div class="banner-image">
+        <img src="/Assets/banner.png" alt="Your Image" class="custom-image" />
+      </div>
+    </div>
+
+    <!-- offer -->
+    <div class="container py-3">
+      <div class="offer-slider">
+        <button
+          class="slider-controlll-prev"
+          type="button"
+          id="offerSliderPrevBtn"
+        >
+          <span class="slider-controlll-prev-icon" aria-hidden="true">
+            <i class="fa-solid fa-arrow-left"></i>
+          </span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <div class="row flex-nowrap overflow-hidden" id="offerCategorySlider">
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="offer-item">
+              <div class="offer-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/offer-1.png"
+                  alt="Product Image"
+                  class="offer-image"
+                />
+              </div>
+              <p class="offer-name">dekbedovertrekken en hoeslakens</p>
+              <p class="offer-validity">geldig t/m 20 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="offer-item">
+              <div class="offer-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/offer-2.png"
+                  alt="Product Image"
+                  class="offer-image"
+                />
+              </div>
+              <p class="offer-name">warmtekussens en kruiken</p>
+              <p class="offer-validity">geldig t/m 20 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="offer-item">
+              <div class="offer-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/offer-3.png"
+                  alt="Product Image"
+                  class="offer-image"
+                />
+              </div>
+              <p class="offer-name">dekbedden en kussens</p>
+              <p class="offer-validity">geldig t/m 20 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="offer-item">
+              <div class="offer-box">
+                <div class="discount-badge"><span>40%</span><br />korting</div>
+                <img
+                  src="/Assets/offer-4.png"
+                  alt="Product Image"
+                  class="offer-image"
+                />
+              </div>
+              <p class="offer-name">(led) kaarsen en sfeerlichten</p>
+              <p class="offer-validity">geldig t/m 20 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="offer-item">
+              <div class="offer-box">
+                <div class="discount-badge"><span>2+1</span><br />gratis</div>
+                <img
+                  src="/Assets/offer-5.png"
+                  alt="Product Image"
+                  class="offer-image"
+                />
+              </div>
+              <p class="offer-name">servies</p>
+              <p class="offer-validity">geldig t/m 20 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="offer-item">
+              <div class="offer-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/offer-6.png"
+                  alt="Product Image"
+                  class="offer-image"
+                />
+              </div>
+              <p class="offer-name">keukentextiel</p>
+              <p class="offer-validity">geldig t/m 20 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="offer-item">
+              <div class="offer-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/offer-7.png"
+                  alt="Product Image"
+                  class="offer-image"
+                />
+              </div>
+              <p class="offer-name">
+                planten, kunstbloemen, vazen en bloempotten
+              </p>
+              <p class="offer-validity">geldig t/m 20 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="offer-item">
+              <div class="offer-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/offer-8.png"
+                  alt="Product Image"
+                  class="offer-image"
+                />
+              </div>
+              <p class="offer-name">kaarsaccessoires</p>
+              <p class="offer-validity">geldig t/m 20 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="offer-item">
+              <div class="offer-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/offer-9.png"
+                  alt="Product Image"
+                  class="offer-image"
+                />
+              </div>
+              <p class="offer-name">opbergboxen</p>
+              <p class="offer-validity">geldig t/m 20 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="offer-item">
+              <div class="offer-box">
+                <div class="discount-badge"><span>25%</span><br />korting</div>
+                <img
+                  src="/Assets/offer-10.png"
+                  alt="Product Image"
+                  class="offer-image"
+                />
+              </div>
+              <p class="offer-name">raamdecoratie</p>
+              <p class="offer-validity">geldig t/m 20 oktober</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="offer-item-last">
+              <span class="slider-controlll-next-icon" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+              <p>meer aanbiedingen</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="slider-controlll-next"
+          type="button"
+          id="offerSliderNextBtn"
+        >
+          <span class="slider-controlll-next-icon" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- product -->
+
+    <div
+      class="container py-4 d-flex justify-content-between align-items-center"
+    >
+      <div class="left">
+        <div class="title">
+          <h2>nu in de aanbieding</h2>
+        </div>
+        <div class="description">
+          <p>geldig t/m 20 oktober</p>
+        </div>
+      </div>
+      <div class="right d-flex align-items-center" style="cursor: pointer">
+        <div class="text">
+          <p class="m-0">bekijk alles</p>
+        </div>
+        <div class="button"><i class="fa-solid fa-arrow-right p-2 f"></i></div>
+      </div>
+    </div>
+
+    <div class="container py-3">
+      <div class="product-slider">
+        <button
+          class="slider-controllll-prev"
+          type="button"
+          id="productSliderPrevBtn"
+        >
+          <span class="slider-controllll-prev-icon" aria-hidden="true">
+            <i class="fa-solid fa-arrow-left"></i>
+          </span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <div class="row flex-nowrap overflow-hidden" id="productCategorySlider">
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="product-item">
+              <div class="product-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/product-1.png"
+                  alt="Product Image"
+                  class="product-image"
+                />
+              </div>
+              <p class="product-name">dames nachtmode en sloffen</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="product-item">
+              <div class="product-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/product-2.png"
+                  alt="Product Image"
+                  class="product-image"
+                />
+              </div>
+              <p class="product-name">kind nachtmode en sloffen</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="product-item">
+              <div class="product-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/product-3.png"
+                  alt="Product Image"
+                  class="product-image"
+                />
+              </div>
+              <p class="product-name">heren basic t-shirts</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="product-item">
+              <div class="product-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/product-4.png"
+                  alt="Product Image"
+                  class="product-image"
+                />
+              </div>
+              <p class="product-name">fotocadeaus</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="product-item">
+              <div class="product-box">
+                <div class="discount-badge"><span>30%</span><br />gratis</div>
+                <img
+                  src="/Assets/product-5.png"
+                  alt="Product Image"
+                  class="product-image"
+                />
+              </div>
+              <p class="product-name">baby nachtmode en sloffen</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="product-item">
+              <div class="product-box">
+                <div class="discount-badge"><span>30%</span><br />korting</div>
+                <img
+                  src="/Assets/product-6.png"
+                  alt="Product Image"
+                  class="product-image"
+                />
+              </div>
+              <p class="product-name">Prothese BH</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="product-item">
+              <div class="product-box">
+                <div class="discount-badge"><span>25%</span><br />korting</div>
+                <img
+                  src="/Assets/product-7.png"
+                  alt="Product Image"
+                  class="product-image"
+                />
+              </div>
+              <p class="product-name">dames vesten</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="product-item">
+              <div class="product-box">
+                <div class="discount-badge" style="text-align: left">
+                  nu<br /><span
+                    >13.<sup style="left: -10px; top: -11px; font-size: 20px"
+                      >99</sup
+                    ></span
+                  >
+                </div>
+                <img
+                  src="/Assets/product-8.png"
+                  alt="Product Image"
+                  class="product-image"
+                />
+              </div>
+              <p class="product-name">plaids</p>
+            </div>
+          </div>
+
+          <div class="col-6 col-sm-4 col-md-3">
+            <div class="product-item-last">
+              <span class="slider-controlllll-next-icon" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+              <p>bekijk alles</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="slider-controllll-next"
+          type="button"
+          id="productSliderNextBtn"
+        >
+          <span class="slider-controllll-next-icon" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 mb-3">
+            <img
+              src="https://www.hema.nl/on/demandware.static/Sites-HemaNL-Site/-/default/dw6caf9454/images/logo.svg"
+              alt="HEMA Logo"
+              class="footer-logo img-fluid"
+            />
+          </div>
+          <div class="col-lg-9">
+            <div
+              class="footer-links d-flex flex-wrap justify-content-start justify-content-lg-end mb-3"
+            >
+              <a href="#" class="mb-2 border-0 hov">privacy statement</a>
+              <a href="#" class="mb-2 hov">disclaimer</a>
+              <a href="#" class="mb-2 hov">security</a>
+              <a href="#" class="mb-2 hov">copyright</a>
+              <a href="#" class="mb-2 hov">algemene voorwaarden</a>
+              <a href="#" class="mb-2 hov">cookies</a>
+              <a href="#" class="mb-2 hov">nix 18</a>
+              <a href="#" class="mb-2 border-0"
+                ><img
+                  src="https://www.hema.nl/on/demandware.static/-/Sites-HemaNL-Library/nl_NL/dwe5b27548/imagesAssets/nix-18.png"
+                  alt="logo nix 18"
+                  title="nix 18"
+              /></a>
+              <a href="#" class="mb-2 hov">thuiswinkel waarborg</a>
+              <a href="#" class="mb-2 border-0"
+                ><img
+                  alt="logo thuiswinkel"
+                  src="https://www.hema.nl/on/demandware.static/-/Sites-HemaNL-Library/nl_NL/dwe45e42a7/imagesAssets/secured-shopping.png"
+                  title="thuiswinkel waarborg"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 footer-info text-lg-center">
+            <p class="mb-1">HEMA B.V., NDSM-straat 10,1033 SB Amsterdam</p>
+            <p class="mb-1">KVK-nummer: 34215639</p>
+            <p class="mb-1">IBAN: HEMA NL67INGB0651607663</p>
+            <p class="mb-1">Btw-identificatienummer: NL814217412B01</p>
+            <p class="mb-1">
+              E-mailadres klantenservice: hemaklantsenservice@hema.nl
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- <footer class="footer redesign" data-cy="ft-body">
+      <div class="footer-colored-container">
+        <div class="wrap wrap-purple wrap-first"></div>
+        <div class="footer-social">
+          <div class="wrap border wrap-second"></div>
+        </div>
+        <div class="footer-links">
+          <div class="wrap border wrap-third js-gtm-mainnav">
+            <div class="footer-info">
+              <div class="wrap border wrap-fourth">
+                <div class="footer-row">
+                  <div class="content-asset" data-gtmmenu="foot">
+                    <img
+                      class="web-awards-logo"
+                      loading="lazy"
+                      src="https://www.hema.nl/on/demandware.static/-/Sites-HemaNL-Library/nl_NL/dwbfcc0964/imagesAssets/WA-Warenhuis-NL-2018-2019.png"
+                      alt="warenhuis"
+                    />
+                    <ul>
+                      <li>
+                        <a href="https://www.hema.nl/privacy-statement"
+                          >privacy statement</a
+                        >
+                      </li>
+                      <li>
+                        <a href="https://www.hema.nl/disclaimer">disclaimer</a>
+                      </li>
+                      <li>
+                        <a href="https://security.hema.nl/nl/">security</a>
+                      </li>
+                      <li>
+                        <a href="https://www.hema.nl/copyright">copyright</a>
+                      </li>
+                      <li>
+                        <a href="https://www.hema.nl/algemene-voorwaarden"
+                          >algemene voorwaarden</a
+                        >
+                      </li>
+                      <li><a href="https://www.hema.nl/cookies">cookies</a></li>
+                      <li>
+                        <a href="https://www.hema.nl/nix-18">nix 18</a>
+                        <img
+                          loading="lazy"
+                          src="https://www.hema.nl/on/demandware.static/-/Sites-HemaNL-Library/nl_NL/dwe5b27548/imagesAssets/nix-18.png"
+                          alt="logo nix 18"
+                          title="nix 18"
+                        />
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.thuiswinkel.org/leden/hema/certificaat"
+                          >thuiswinkel waarborg</a
+                        >
+                        <img
+                          alt="logo thuiswinkel"
+                          loading="lazy"
+                          src="https://www.hema.nl/on/demandware.static/-/Sites-HemaNL-Library/nl_NL/dwe45e42a7/imagesAssets/secured-shopping.png"
+                          title="thuiswinkel waarborg"
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="https://www.hema.nl/" class="logo">
+                    <img
+                      src="https://www.hema.nl/on/demandware.static/Sites-HemaNL-Site/-/default/dw6caf9454/images/logo.svg"
+                      alt="Hema"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-legal">
+          <div class="wrap wrap-fifth">
+            <div class="footer-row">
+              <div
+                class="content-asset"
+                dwContentID="c9c5926d07f663ee2557e1fb45"
+              >
+                <ul class="footer-legal-list">
+                  <li class="caption">
+                    HEMA B.V., NDSM-straat 10, 1033 SB Amsterdam
+                  </li>
+                  <li class="caption">KvK-nummer: 34215639</li>
+                  <li class="caption">IBAN: HEMA NL67INGB0651607663</li>
+                  <li class="caption">
+                    Btw-identificatienummer: NL814217412B01
+                  </li>
+                  <li class="caption">
+                    E-mailadres klantenservice: hemaklantsenservice@hema.nl
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
